@@ -1,0 +1,23 @@
+.item {
+  max-width: calc(100% - 3rem);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  background-color: #333;
+
+  padding: 0.8rem;
+
+  border: 1px solid #444;
+  border-radius: 10px;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.item button {
+  justify-self: end;
+  align-self: center;
+}

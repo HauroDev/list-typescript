@@ -1,9 +1,9 @@
 import './App.css'
-import Item from './components/Item'
+import Item from './components/Item/Item'
 import { ItemId, useItems } from './hooks/useItems'
 import { useSEO } from './hooks/useSEO'
 
-// const INITIAL_ITEMS: Item[] = [
+/* // const INITIAL_ITEMS: Item[] = [
 //   {
 //     id: crypto.randomUUID(),
 //     timestamp: Date.now(),
@@ -19,10 +19,10 @@ import { useSEO } from './hooks/useSEO'
 //     timestamp: Date.now(),
 //     name: 'Rocket Jump'
 //   }
-// ]
+// ] */
 
 function App() {
-  const { items, addItem, removeItem } = useItems()
+  const { items, addItem, removeItem } = useItems('items')
   useSEO({
     title: `List with Typescripts - ${items.length} items`,
     description: 'Elimina elementos de la lista'

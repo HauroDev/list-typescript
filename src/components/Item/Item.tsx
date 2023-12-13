@@ -1,3 +1,5 @@
+import styled from './Item.module.css'
+
 const Item = ({
   name,
   handleClick
@@ -6,9 +8,9 @@ const Item = ({
   handleClick: () => void
 }) => {
   return (
-    <li>
+    <li className={styled.item}>
       {name}
-      <button onClick={handleClick}>Eliminar elemento</button>
+      <button onClick={handleClick}>Eliminar</button>
     </li>
   )
 }

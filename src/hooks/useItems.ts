@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { loadData, saveData } from '../utils/storage'
 
 export type ItemId = `${string}-${string}-${string}-${string}-${string}`
 
@@ -8,8 +9,14 @@ interface Item {
   name: string
 }
 
-export const useItems = () => {
-  const [items, setItems] = useState<Item[]>([])
+export const useItems = (name = 'items') => {
+  const [items, setItems] = useState<Item[]>(loadData(name) || [])
+
+  useEffect(() => {
+    console.log('Carga Completa')
+    saveData(name, items)
+    return () => console.log('cargando datos...')
+  }, [items, name])
 
   const addItem = (name: string) => {
     const newItem = {
